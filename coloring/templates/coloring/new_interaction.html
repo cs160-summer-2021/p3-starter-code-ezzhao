@@ -24,7 +24,7 @@
 
 			// color palette
 			var cp = {
-				history: ["#000000"], // black selected by default
+				history: ["#ffffff"], // black selected by default
 				options: [],
 				$container: $('#color-palette')
 			}
@@ -48,10 +48,11 @@
 				// create a swatch for each color
 				for (var i = colors.length - 1; i >= 0; i--) {
 					var $swatch = $("<div>").css("background-color", colors[i])
-									   .addClass("swatch");
+									   .addClass("swatch swatch-" + i);
 					$swatch.click(function(){
 						// add color to the color palette history
 					  	cp.history.push($(this).css("background-color"));
+							cp.$container.css("background-color", cp.history[cp.history.length - 1]);
 					});
 					cp.$container.append($swatch);
 				}
@@ -60,13 +61,12 @@
 			// loads a set of colors from a json to create a color palette
 			function getColorsCreatePalette(){
 				cp.$container.html(" ");
-				$.getJSON('/static/coloring/vendors/material/material-colors.json', function(colors){
-					var keys = Object.keys(colors);
-					for (var i = keys.length - 1; i >= 0; i--) {
-						cp.options.push(colors[keys[i]][500]);
-					}
-					createColorPalette(cp.options);
-				});
+				cp.options.push("#384e79");
+				cp.options.push("#5874db");
+				cp.options.push("#e06c77");
+				cp.options.push("#fa9383");
+				cp.options.push("#6aab9b");
+				createColorPalette(cp.options);
 			}
 
 			function init(custom){
@@ -95,5 +95,9 @@
 
 	<canvas id="myCanvas" width="750px" height="750px"></canvas>
 	<div id="color-palette"></div>
+	<div id="inner-palette">
+		<!-- Palette icon source: https://iconscout.com/icon/color-palette-1594597 -->
+		<img id="palette-icon" src="https://cdn.iconscout.com/icon/free/png-256/color-palette-1594597-1348702.png" width=68px>
+	</div>
 </body>
 </html>
