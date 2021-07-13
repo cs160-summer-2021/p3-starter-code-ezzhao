@@ -1,3 +1,11 @@
+#myCanvas {
+  padding-left: 0;
+    padding-right: 0;
+    margin: auto;
+    margin-top: 110px;
+    display: block;
+}
+
 #color-palette {
   width: 220px;
   height: 220px;
@@ -16,7 +24,7 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  border: 2px solid #d4d4d4;
+  border: 1px solid #d4d4d4;
 }
 
 #palette-icon {
@@ -53,10 +61,30 @@
   transform: rotate(288deg) translateX(-170px) translateY(-10px);
 }
 
-#myCanvas {
-  padding-left: 0;
-    padding-right: 0;
-    margin: auto;
-    margin-top: 4%;
-    display: block;
+#side-box {
+  width: 110px;
+  height: 457px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ededed;
+  margin-top: 180px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.tool-icon {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.tool-icon-1 {
+  margin-top: 18px;
+  margin-left: 20px;
+}
+
+.tool-icon-5 {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 18px;
 }
