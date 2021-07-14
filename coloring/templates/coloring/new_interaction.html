@@ -60,8 +60,16 @@
 					});
 					if (i < 5) {
 						cp.$container.append($swatch);
-					} else {
-						$("#palette-colors").append($swatch);
+					} else if (i < 10) {
+						$("#colors-1").append($swatch);
+					} else if (i < 15) {
+						$("#colors-2").append($swatch);
+					} else if (i < 20) {
+						$("#colors-3").append($swatch);
+					} else if (i < 25) {
+						$("#colors-4").append($swatch);
+					} else if (i < 30) {
+						$("#colors-5").append($swatch);
 					}
 				}
 			}
@@ -79,26 +87,26 @@
 				cp.options.push("#e06c78");
 				cp.options.push("#fa9384");
 				cp.options.push("#6aab9c");
-				cp.options.push("#a5cad2");
+				cp.options.push("#97b2b8");
 				cp.options.push("#758eb7");
 				cp.options.push("#6f5f90");
 				cp.options.push("#8a5082");
-				cp.options.push("#ff7b89");
-				cp.options.push("#706695");
-				cp.options.push("#4d446f");
-				cp.options.push("#dfb15b");
-				cp.options.push("#f8956f");
-				cp.options.push("#df825f");
-				cp.options.push("#d46c4e");
-				cp.options.push("#f9ad6a");
-				cp.options.push("#f9e07f");
-				cp.options.push("#43978d");
-				cp.options.push("#264d59");
-				cp.options.push("#ffffff");
-				cp.options.push("#ffffff");
-				cp.options.push("#ffffff");
-				cp.options.push("#ffffff");
-				cp.options.push("#ffffff");
+				cp.options.push("#ec9bac");
+				cp.options.push("#eab595");
+				cp.options.push("#d87f81");
+				cp.options.push("#ae6378");
+				cp.options.push("#79616f");
+				cp.options.push("#7e9680");
+				cp.options.push("#f3dbcf");
+				cp.options.push("#e5c1cd");
+				cp.options.push("#c9bbc8");
+				cp.options.push("#b6b4c2");
+				cp.options.push("#aac9ce");
+				cp.options.push("#000000");
+				cp.options.push("#9b9b9b");
+				cp.options.push("#b6b6b6");
+				cp.options.push("#d1d1d1");
+				cp.options.push("#e7e7e7");
 
 				createColorPalette(cp.options);
 			}
@@ -126,39 +134,59 @@
 
 
 			$("#tool-icon-1").click(function() {
+				if ($("#tool-icon-1").css("background-color") == "rgb(209, 209, 209)") {
+					$("#tool-icon-1").css("background-color", "transparent");
+				} else {
 				$("#tool-icon-1").css("background-color", "#d1d1d1");
 				$("#tool-icon-2").css("background-color", "transparent");
 				$("#tool-icon-3").css("background-color", "transparent");
 				$("#tool-icon-4").css("background-color", "transparent");
 				$("#tool-icon-5").css("background-color", "transparent");
+				}
 			});
 			$("#tool-icon-2").click(function() {
+				if ($("#tool-icon-2").css("background-color") == "rgb(209, 209, 209)") {
+					$("#tool-icon-2").css("background-color", "transparent");
+				} else {
 				$("#tool-icon-1").css("background-color", "transparent");
 				$("#tool-icon-2").css("background-color", "#d1d1d1");
 				$("#tool-icon-3").css("background-color", "transparent");
 				$("#tool-icon-4").css("background-color", "transparent");
 				$("#tool-icon-5").css("background-color", "transparent");
+				}
 			});
 			$("#tool-icon-3").click(function() {
+				if ($("#tool-icon-3").css("background-color") == "rgb(209, 209, 209)") {
+					$("#tool-icon-3").css("background-color", "transparent");
+				} else {
 				$("#tool-icon-1").css("background-color", "transparent");
 				$("#tool-icon-2").css("background-color", "transparent");
 				$("#tool-icon-3").css("background-color", "#d1d1d1");
 				$("#tool-icon-4").css("background-color", "transparent");
 				$("#tool-icon-5").css("background-color", "transparent");
+				}
 			});
 			$("#tool-icon-4").click(function() {
+				if ($("#tool-icon-4").css("background-color") == "rgb(209, 209, 209)") {
+					$("#tool-icon-4").css("background-color", "transparent");
+				} else {
 				$("#tool-icon-1").css("background-color", "transparent");
 				$("#tool-icon-2").css("background-color", "transparent");
 				$("#tool-icon-3").css("background-color", "transparent");
 				$("#tool-icon-4").css("background-color", "#d1d1d1");
 				$("#tool-icon-5").css("background-color", "transparent");
+				}
 			});
 			$("#tool-icon-5").click(function() {
+				if ($("#tool-icon-5").css("background-color") == "rgb(209, 209, 209)") {
+					$("#tool-icon-5").css("background-color", "transparent");
+				} else {
 				$("#tool-icon-1").css("background-color", "transparent");
 				$("#tool-icon-2").css("background-color", "transparent");
 				$("#tool-icon-3").css("background-color", "transparent");
 				$("#tool-icon-4").css("background-color", "transparent");
 				$("#tool-icon-5").css("background-color", "#d1d1d1");
+				}
 			});
 
 			$("#palette-colors").hide();
@@ -166,6 +194,46 @@
 			$("#palette-icon").click(function() {
 				$("#color-palette").toggle();
 				$("#palette-colors").toggle();
+			});
+
+			$("#colors-1").click(function() {
+				$("#color-palette").toggle();
+				$("#palette-colors").toggle();
+				for (var i = 0; i < 5; i++) {
+					$(".swatch-" + i).css("background-color", cp.options[i]);
+				}
+			});
+
+			$("#colors-2").click(function() {
+				$("#color-palette").toggle();
+				$("#palette-colors").toggle();
+				for (var i = 0; i < 5; i++) {
+					$(".swatch-" + i).css("background-color", cp.options[i + 10]);
+				}
+			});
+
+			$("#colors-3").click(function() {
+				$("#color-palette").toggle();
+				$("#palette-colors").toggle();
+				for (var i = 0; i < 5; i++) {
+					$(".swatch-" + i).css("background-color", cp.options[i + 15]);
+				}
+			});
+
+			$("#colors-4").click(function() {
+				$("#color-palette").toggle();
+				$("#palette-colors").toggle();
+				for (var i = 0; i < 5; i++) {
+					$(".swatch-" + i).css("background-color", cp.options[i + 20]);
+				}
+			});
+
+			$("#colors-5").click(function() {
+				$("#color-palette").toggle();
+				$("#palette-colors").toggle();
+				for (var i = 0; i < 5; i++) {
+					$(".swatch-" + i).css("background-color", cp.options[i + 25]);
+				}
 			});
 		}
 
@@ -179,6 +247,11 @@
 		<!-- Palette icon source: https://thenounproject.com/term/palette/2093463/ -->
 		<img id="palette-icon" src="https://static.thenounproject.com/png/2093463-200.png" width=72px>
 		<div id="palette-colors">
+			<div class="colors" id="colors-1"></div>
+			<div class="colors" id="colors-2"></div>
+			<div class="colors" id="colors-3"></div>
+			<div class="colors" id="colors-4"></div>
+			<div class="colors" id="colors-5"></div>
 		</div>
 	</div>
 	<div id="side-box">

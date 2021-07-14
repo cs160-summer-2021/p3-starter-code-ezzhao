@@ -1,19 +1,24 @@
+body {
+  background-color: #fcfcfc;
+}
+
 #myCanvas {
   padding-left: 0;
-    padding-right: 0;
-    margin: auto;
-    margin-top: 100px;
-    display: block;
+  padding-right: 0;
+  margin: auto;
+  margin-top: 100px;
+  display: block;
 }
 
 #color-palette {
   width: 220px;
   height: 220px;
   border-top-left-radius: 100%;
-  background-color: #ededed;
+  background-color: #ffffff;
   position: fixed;
   bottom: 0;
   right: 0;
+  border: 1px solid #d1d1d1;
 }
 
 #inner-palette {
@@ -39,6 +44,7 @@
   border-radius: 100%;
   margin: 3px;
   position: absolute;
+  border: 1px solid #cccccc;
 }
 
 .swatch-0 {
@@ -66,19 +72,19 @@
 }
 
 .swatch-6 {
-  transform: rotate(0deg) translateX(86px) translateY(-205px);
+  transform: rotate(0deg) translateX(86px) translateY(-200px);
 }
 
 .swatch-7 {
-  transform: rotate(0deg) translateX(86px) translateY(-275px);
+  transform: rotate(0deg) translateX(86px) translateY(-265px);
 }
 
 .swatch-8 {
-  transform: rotate(0deg) translateX(86px) translateY(-345px);
+  transform: rotate(0deg) translateX(86px) translateY(-330px);
 }
 
 .swatch-9 {
-  transform: rotate(0deg) translateX(86px) translateY(-415px);
+  transform: rotate(0deg) translateX(86px) translateY(-395px);
 }
 
 .swatch-10 {
@@ -86,19 +92,19 @@
 }
 
 .swatch-11 {
-  transform: rotate(72deg) translateX(-170px) translateY(-69px);
+  transform: rotate(72deg) translateX(-165px) translateY(-69px);
 }
 
 .swatch-12 {
-  transform: rotate(72deg) translateX(-240px) translateY(-69px);
+  transform: rotate(72deg) translateX(-230px) translateY(-69px);
 }
 
 .swatch-13 {
-  transform: rotate(72deg) translateX(-310px) translateY(-69px);
+  transform: rotate(72deg) translateX(-295px) translateY(-69px);
 }
 
 .swatch-14 {
-  transform: rotate(72deg) translateX(-380px) translateY(-69px);
+  transform: rotate(72deg) translateX(-360px) translateY(-69px);
 }
 
 .swatch-15 {
@@ -106,19 +112,19 @@
 }
 
 .swatch-16 {
-  transform: rotate(144deg) translateX(-42px) translateY(145px);
+  transform: rotate(144deg) translateX(-42px) translateY(140px);
 }
 
 .swatch-17 {
-  transform: rotate(144deg) translateX(-42px) translateY(215px);
+  transform: rotate(144deg) translateX(-42px) translateY(205px);
 }
 
 .swatch-18 {
-  transform: rotate(144deg) translateX(-42px) translateY(285px);
+  transform: rotate(144deg) translateX(-42px) translateY(270px);
 }
 
 .swatch-19 {
-  transform: rotate(144deg) translateX(-42px) translateY(355px);
+  transform: rotate(144deg) translateX(-42px) translateY(335px);
 }
 
 .swatch-20 {
@@ -126,45 +132,41 @@
 }
 
 .swatch-21 {
-  transform: rotate(216deg) translateX(129px) translateY(8px);
+  transform: rotate(216deg) translateX(124px) translateY(8px);
 }
 
 .swatch-22 {
-  transform: rotate(216deg) translateX(199px) translateY(8px);
+  transform: rotate(216deg) translateX(189px) translateY(8px);
 }
 
 .swatch-23 {
-  transform: rotate(216deg) translateX(269px) translateY(8px);
+  transform: rotate(216deg) translateX(254px) translateY(8px);
 }
 
 .swatch-24 {
-  transform: rotate(216deg) translateX(339px) translateY(8px);
+  transform: rotate(216deg) translateX(319px) translateY(8px);
 }
 
 .swatch-25 {
   transform: rotate(288deg) translateX(-30px) translateY(-56px);
-  border: 1px solid #000000;
 }
 
 .swatch-26 {
-  transform: rotate(288deg) translateX(-30px) translateY(-126px);
-  border: 1px solid #000000;
+  transform: rotate(288deg) translateX(-30px) translateY(-121px);
 }
 
 .swatch-27 {
-  transform: rotate(288deg) translateX(-30px) translateY(-196px);
-  border: 1px solid #000000;
+  transform: rotate(288deg) translateX(-30px) translateY(-186px);
 }
 
 .swatch-28 {
-  transform: rotate(288deg) translateX(-30px) translateY(-266px);
-  border: 1px solid #000000;
+  transform: rotate(288deg) translateX(-30px) translateY(-251px);
 }
 
 .swatch-29 {
-  transform: rotate(288deg) translateX(-30px) translateY(-336px);
-  border: 1px solid #000000;
+  transform: rotate(288deg) translateX(-30px) translateY(-316px);
 }
+
 
 #side-box {
   width: 110px;
@@ -176,6 +178,7 @@
   margin-top: 180px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  border: 1px solid #d1d1d1;
 }
 
 .tool-icon {
