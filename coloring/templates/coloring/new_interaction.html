@@ -37,7 +37,11 @@
 				    if (hit) {
 				    		// Color pallette keeps track of the full history of colors, though we
 				    		// only color in with the most-recent color.
-				        hit.item.fillColor = cp.history[cp.history.length - 1];
+								if ($("#tool-icon-5").css("background-color") == "rgb(209, 209, 209)") {
+									hit.item.fillColor = "#ffffff";
+								} else {
+									hit.item.fillColor = cp.history[cp.history.length - 1];
+								}
 				    }
 				}
 			}
@@ -54,20 +58,51 @@
 					  	cp.history.push($(this).css("background-color"));
 							cp.$container.css("background-color", cp.history[cp.history.length - 1]);
 					});
-					cp.$container.append($swatch);
+					if (i < 5) {
+						cp.$container.append($swatch);
+					} else {
+						$("#palette-colors").append($swatch);
+					}
 				}
 			}
 
 			// loads a set of colors from a json to create a color palette
 			function getColorsCreatePalette(){
 				cp.$container.html(" ");
-				cp.options.push("#384e79");
-				cp.options.push("#5874db");
-				cp.options.push("#e06c77");
-				cp.options.push("#fa9383");
-				cp.options.push("#6aab9b");
+				cp.options.push("#384e78");
+				cp.options.push("#5874dc");
+				cp.options.push("#e06c78");
+				cp.options.push("#fa9384");
+				cp.options.push("#6aab9c");
+				cp.options.push("#384e78");
+				cp.options.push("#5874dc");
+				cp.options.push("#e06c78");
+				cp.options.push("#fa9384");
+				cp.options.push("#6aab9c");
+				cp.options.push("#a5cad2");
+				cp.options.push("#758eb7");
+				cp.options.push("#6f5f90");
+				cp.options.push("#8a5082");
+				cp.options.push("#ff7b89");
+				cp.options.push("#706695");
+				cp.options.push("#4d446f");
+				cp.options.push("#dfb15b");
+				cp.options.push("#f8956f");
+				cp.options.push("#df825f");
+				cp.options.push("#d46c4e");
+				cp.options.push("#f9ad6a");
+				cp.options.push("#f9e07f");
+				cp.options.push("#43978d");
+				cp.options.push("#264d59");
+				cp.options.push("#ffffff");
+				cp.options.push("#ffffff");
+				cp.options.push("#ffffff");
+				cp.options.push("#ffffff");
+				cp.options.push("#ffffff");
+
 				createColorPalette(cp.options);
 			}
+
 
 			function init(custom){
 				paper.setup(canvas);
@@ -88,7 +123,52 @@
 
 			// Set up the mandala interactivity.
 			init(true);
+
+
+			$("#tool-icon-1").click(function() {
+				$("#tool-icon-1").css("background-color", "#d1d1d1");
+				$("#tool-icon-2").css("background-color", "transparent");
+				$("#tool-icon-3").css("background-color", "transparent");
+				$("#tool-icon-4").css("background-color", "transparent");
+				$("#tool-icon-5").css("background-color", "transparent");
+			});
+			$("#tool-icon-2").click(function() {
+				$("#tool-icon-1").css("background-color", "transparent");
+				$("#tool-icon-2").css("background-color", "#d1d1d1");
+				$("#tool-icon-3").css("background-color", "transparent");
+				$("#tool-icon-4").css("background-color", "transparent");
+				$("#tool-icon-5").css("background-color", "transparent");
+			});
+			$("#tool-icon-3").click(function() {
+				$("#tool-icon-1").css("background-color", "transparent");
+				$("#tool-icon-2").css("background-color", "transparent");
+				$("#tool-icon-3").css("background-color", "#d1d1d1");
+				$("#tool-icon-4").css("background-color", "transparent");
+				$("#tool-icon-5").css("background-color", "transparent");
+			});
+			$("#tool-icon-4").click(function() {
+				$("#tool-icon-1").css("background-color", "transparent");
+				$("#tool-icon-2").css("background-color", "transparent");
+				$("#tool-icon-3").css("background-color", "transparent");
+				$("#tool-icon-4").css("background-color", "#d1d1d1");
+				$("#tool-icon-5").css("background-color", "transparent");
+			});
+			$("#tool-icon-5").click(function() {
+				$("#tool-icon-1").css("background-color", "transparent");
+				$("#tool-icon-2").css("background-color", "transparent");
+				$("#tool-icon-3").css("background-color", "transparent");
+				$("#tool-icon-4").css("background-color", "transparent");
+				$("#tool-icon-5").css("background-color", "#d1d1d1");
+			});
+
+			$("#palette-colors").hide();
+
+			$("#palette-icon").click(function() {
+				$("#color-palette").toggle();
+				$("#palette-colors").toggle();
+			});
 		}
+
 	</script>
 </head>
 <body>
@@ -97,23 +177,25 @@
 	<div id="color-palette"></div>
 	<div id="inner-palette">
 		<!-- Palette icon source: https://thenounproject.com/term/palette/2093463/ -->
-		<img id="palette-icon" src="https://static.thenounproject.com/png/2093463-200.png" width=70px>
+		<img id="palette-icon" src="https://static.thenounproject.com/png/2093463-200.png" width=72px>
+		<div id="palette-colors">
+		</div>
 	</div>
 	<div id="side-box">
 		<!-- Pencil icon source: https://thenounproject.com/term/color-pencil/3961397/ -->
-		<img class="tool-icon-1" src="https://static.thenounproject.com/png/3961397-200.png" width=66px>
+		<img class="tool-icon" id="tool-icon-1" src="https://static.thenounproject.com/png/3961397-200.png" width=65px>
 
 		<!-- Brush icon source: https://thenounproject.com/term/paint-brush/63875/ -->
-		<img class="tool-icon-1" src="https://static.thenounproject.com/png/63875-200.png" width=66px>
+		<img class="tool-icon" id="tool-icon-2" src="https://static.thenounproject.com/png/63875-200.png" width=65px>
 
 		<!-- Crayon icon source: https://thenounproject.com/term/crayon/392/ -->
-		<img class="tool-icon" src="https://static.thenounproject.com/png/392-200.png" width=62px>
+		<img class="tool-icon" id="tool-icon-3" src="https://static.thenounproject.com/png/392-200.png" width=65px>
 
 		<!-- Fill bucket icon source: https://thenounproject.com/term/fill-bucket/808626/ -->
-		<img class="tool-icon" src="https://static.thenounproject.com/png/808626-200.png" width=69px>
+		<img class="tool-icon" id="tool-icon-4" src="https://static.thenounproject.com/png/808626-200.png" width=65px>
 
 		<!-- Eraser icon source: https://thenounproject.com/term/crayon/392/ -->
-		<img class="tool-icon-5" src="https://static.thenounproject.com/png/38402-200.png" width=59px>
+		<img class="tool-icon" id="tool-icon-5" src="https://static.thenounproject.com/png/38402-200.png" width=65px>
 	</div>
 </body>
 </html>

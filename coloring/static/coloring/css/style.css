@@ -2,7 +2,7 @@
   padding-left: 0;
     padding-right: 0;
     margin: auto;
-    margin-top: 110px;
+    margin-top: 100px;
     display: block;
 }
 
@@ -17,18 +17,18 @@
 }
 
 #inner-palette {
-  width: 120px;
-  height: 120px;
+  width: 145px;
+  height: 145px;
   border-top-left-radius: 100%;
   background-color: #ededed;
   position: fixed;
   bottom: 0;
   right: 0;
-  border: 1px solid #d4d4d4;
+  border: 1px solid #d1d1d1;
 }
 
 #palette-icon {
-  transform: translateX(36px) translateY(38px);
+  transform: translateX(51px) translateY(52px);
 }
 
 .swatch {
@@ -61,6 +61,111 @@
   transform: rotate(288deg) translateX(-170px) translateY(-10px);
 }
 
+.swatch-5 {
+  transform: rotate(0deg) translateX(86px) translateY(-135px);
+}
+
+.swatch-6 {
+  transform: rotate(0deg) translateX(86px) translateY(-205px);
+}
+
+.swatch-7 {
+  transform: rotate(0deg) translateX(86px) translateY(-275px);
+}
+
+.swatch-8 {
+  transform: rotate(0deg) translateX(86px) translateY(-345px);
+}
+
+.swatch-9 {
+  transform: rotate(0deg) translateX(86px) translateY(-415px);
+}
+
+.swatch-10 {
+  transform: rotate(72deg) translateX(-100px) translateY(-69px);
+}
+
+.swatch-11 {
+  transform: rotate(72deg) translateX(-170px) translateY(-69px);
+}
+
+.swatch-12 {
+  transform: rotate(72deg) translateX(-240px) translateY(-69px);
+}
+
+.swatch-13 {
+  transform: rotate(72deg) translateX(-310px) translateY(-69px);
+}
+
+.swatch-14 {
+  transform: rotate(72deg) translateX(-380px) translateY(-69px);
+}
+
+.swatch-15 {
+  transform: rotate(144deg) translateX(-42px) translateY(75px);
+}
+
+.swatch-16 {
+  transform: rotate(144deg) translateX(-42px) translateY(145px);
+}
+
+.swatch-17 {
+  transform: rotate(144deg) translateX(-42px) translateY(215px);
+}
+
+.swatch-18 {
+  transform: rotate(144deg) translateX(-42px) translateY(285px);
+}
+
+.swatch-19 {
+  transform: rotate(144deg) translateX(-42px) translateY(355px);
+}
+
+.swatch-20 {
+  transform: rotate(216deg) translateX(59px) translateY(8px);
+}
+
+.swatch-21 {
+  transform: rotate(216deg) translateX(129px) translateY(8px);
+}
+
+.swatch-22 {
+  transform: rotate(216deg) translateX(199px) translateY(8px);
+}
+
+.swatch-23 {
+  transform: rotate(216deg) translateX(269px) translateY(8px);
+}
+
+.swatch-24 {
+  transform: rotate(216deg) translateX(339px) translateY(8px);
+}
+
+.swatch-25 {
+  transform: rotate(288deg) translateX(-30px) translateY(-56px);
+  border: 1px solid #000000;
+}
+
+.swatch-26 {
+  transform: rotate(288deg) translateX(-30px) translateY(-126px);
+  border: 1px solid #000000;
+}
+
+.swatch-27 {
+  transform: rotate(288deg) translateX(-30px) translateY(-196px);
+  border: 1px solid #000000;
+}
+
+.swatch-28 {
+  transform: rotate(288deg) translateX(-30px) translateY(-266px);
+  border: 1px solid #000000;
+}
+
+.swatch-29 {
+  transform: rotate(288deg) translateX(-30px) translateY(-336px);
+  border: 1px solid #000000;
+}
+
 #side-box {
   width: 110px;
   height: 457px;
@@ -78,12 +183,17 @@
   margin-left: 20px;
 }
 
-.tool-icon-1 {
+#tool-icon-1 {
   margin-top: 18px;
   margin-left: 20px;
 }
 
-.tool-icon-5 {
+#tool-icon-2 {
+  margin-top: 18px;
+  margin-left: 20px;
+}
+
+#tool-icon-5 {
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 18px;
