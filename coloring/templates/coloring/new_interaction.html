@@ -194,11 +194,13 @@
 			$("#palette-icon").click(function() {
 				$("#color-palette").toggle();
 				$("#palette-colors").toggle();
+				$("#recent-colors").toggle();
 			});
 
 			$("#colors-1").click(function() {
 				$("#color-palette").toggle();
 				$("#palette-colors").toggle();
+				$("#recent-colors").toggle();
 				for (var i = 0; i < 5; i++) {
 					$(".swatch-" + i).css("background-color", cp.options[i]);
 				}
@@ -207,6 +209,7 @@
 			$("#colors-2").click(function() {
 				$("#color-palette").toggle();
 				$("#palette-colors").toggle();
+				$("#recent-colors").toggle();
 				for (var i = 0; i < 5; i++) {
 					$(".swatch-" + i).css("background-color", cp.options[i + 10]);
 				}
@@ -215,6 +218,7 @@
 			$("#colors-3").click(function() {
 				$("#color-palette").toggle();
 				$("#palette-colors").toggle();
+				$("#recent-colors").toggle();
 				for (var i = 0; i < 5; i++) {
 					$(".swatch-" + i).css("background-color", cp.options[i + 15]);
 				}
@@ -223,6 +227,7 @@
 			$("#colors-4").click(function() {
 				$("#color-palette").toggle();
 				$("#palette-colors").toggle();
+				$("#recent-colors").toggle();
 				for (var i = 0; i < 5; i++) {
 					$(".swatch-" + i).css("background-color", cp.options[i + 20]);
 				}
@@ -231,9 +236,37 @@
 			$("#colors-5").click(function() {
 				$("#color-palette").toggle();
 				$("#palette-colors").toggle();
+				$("#recent-colors").toggle();
 				for (var i = 0; i < 5; i++) {
 					$(".swatch-" + i).css("background-color", cp.options[i + 25]);
 				}
+			});
+
+			$(".swatch").click(function() {
+				var same = false;
+				var sameIndex = 0;
+				for (var i = 1; i < 6; i++) {
+					if ($("#recents-" + i).css("background-color") == $(this).css("background-color")) {
+						same = true;
+						sameIndex = i;
+					}
+				}
+				if (same) {
+					for (var j = sameIndex; j < 5; j++) {
+						$("#recents-" + j).css("background-color", $("#recents-" + (j + 1)).css("background-color"));
+					}
+				} else {
+					for (var j = 1; j < 5; j++) {
+						$("#recents-" + j).css("background-color", $("#recents-" + (j + 1)).css("background-color"));
+					}
+				}
+				$("#recents-5").css("background-color", $(this).css("background-color"));
+			});
+
+			$(".recents").click(function(){
+				// add color to the color palette history
+					cp.history.push($(this).css("background-color"));
+					cp.$container.css("background-color", cp.history[cp.history.length - 1]);
 			});
 		}
 
@@ -269,6 +302,13 @@
 
 		<!-- Eraser icon source: https://thenounproject.com/term/crayon/392/ -->
 		<img class="tool-icon" id="tool-icon-5" src="https://static.thenounproject.com/png/38402-200.png" width=65px>
+	</div>
+	<div id="recent-colors">
+		<div class="recents" id="recents-1"></div>
+		<div class="recents" id="recents-2"></div>
+		<div class="recents" id="recents-3"></div>
+		<div class="recents" id="recents-4"></div>
+		<div class="recents" id="recents-5"></div>
 	</div>
 </body>
 </html>

@@ -201,3 +201,38 @@ body {
   margin-left: 20px;
   margin-bottom: 18px;
 }
+
+#recent-colors {
+  width: 78px;
+  height: 344px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #ededed;
+  margin-top: 293px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: 1px solid #d1d1d1;
+}
+
+.recents {
+  width: 48px;
+  height: 48px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  border: 1px solid #cccccc;
+  margin-top: 14px;
+  margin-left: 15px;
+}
+
+#recents-1 {
+  margin-top: 18px;
+  margin-left: 15px;
+}
+
+#recents-5 {
+  margin-top: 14px;
+  margin-left: 15px;
+  margin-bottom: 18px;
+}
