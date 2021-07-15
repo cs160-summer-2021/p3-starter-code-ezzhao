@@ -195,6 +195,11 @@
 				$("#color-palette").toggle();
 				$("#palette-colors").toggle();
 				$("#recent-colors").toggle();
+				if ($("#palette-icon").css("background-color") == "rgb(209, 209, 209)") {
+					$("#palette-icon").css("background-color", "transparent");
+				} else {
+					$("#palette-icon").css("background-color", "#d1d1d1");
+				}
 			});
 
 			$("#colors-1").click(function() {
@@ -204,6 +209,7 @@
 				for (var i = 0; i < 5; i++) {
 					$(".swatch-" + i).css("background-color", cp.options[i]);
 				}
+				$("#palette-icon").css("background-color", "transparent");
 			});
 
 			$("#colors-2").click(function() {
@@ -213,6 +219,7 @@
 				for (var i = 0; i < 5; i++) {
 					$(".swatch-" + i).css("background-color", cp.options[i + 10]);
 				}
+				$("#palette-icon").css("background-color", "transparent");
 			});
 
 			$("#colors-3").click(function() {
@@ -222,6 +229,7 @@
 				for (var i = 0; i < 5; i++) {
 					$(".swatch-" + i).css("background-color", cp.options[i + 15]);
 				}
+				$("#palette-icon").css("background-color", "transparent");
 			});
 
 			$("#colors-4").click(function() {
@@ -231,6 +239,7 @@
 				for (var i = 0; i < 5; i++) {
 					$(".swatch-" + i).css("background-color", cp.options[i + 20]);
 				}
+				$("#palette-icon").css("background-color", "transparent");
 			});
 
 			$("#colors-5").click(function() {
@@ -240,6 +249,7 @@
 				for (var i = 0; i < 5; i++) {
 					$(".swatch-" + i).css("background-color", cp.options[i + 25]);
 				}
+				$("#palette-icon").css("background-color", "transparent");
 			});
 
 			$(".swatch").click(function() {
@@ -309,6 +319,22 @@
 		<div class="recents" id="recents-3"></div>
 		<div class="recents" id="recents-4"></div>
 		<div class="recents" id="recents-5"></div>
+	</div>
+	<div id="top-bar">
+		<img class="top-icon" id="icon-1" src="/static/coloring/images/delete_black_48dp.svg">
+		<img class="top-icon" id="icon-2" src="/static/coloring/images/undo_black_48dp.svg">
+		<img class="top-icon" id="icon-3" src="/static/coloring/images/redo_black_48dp.svg">
+		<img class="top-icon" id="icon-4" src="/static/coloring/images/home_black_48dp.svg">
+		<img class="top-icon" id="icon-5" src="/static/coloring/images/remove_black_48dp.svg">
+		<img class="top-icon" id="icon-6" src="/static/coloring/images/zoom_in_black_48dp.svg">
+		<img class="top-icon" id="icon-7" src="/static/coloring/images/add_black_48dp.svg">
+		<img class="top-icon" id="icon-8" src="/static/coloring/images/check_circle_black_48dp.svg">
+	</div>
+	<div id="bottom-bar">
+		<img class="bottom-icon" id="icon-9" src="/static/coloring/images/layers_black_48dp.svg">
+		<div class="layer"></div>
+		<div class="layer"></div>
+		<div class="layer"></div>
 	</div>
 </body>
 </html>

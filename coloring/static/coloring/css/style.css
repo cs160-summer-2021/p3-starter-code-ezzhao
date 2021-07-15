@@ -2,11 +2,83 @@ body {
   background-color: #fcfcfc;
 }
 
+img {
+  border-radius: 15px;
+}
+
+#top-bar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#bottom-bar {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.top-icon {
+  width: 40px;
+  height: 40px;
+  margin-top: 33px;
+  margin-left: 33px;
+  opacity: 0.5;
+}
+
+.bottom-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 33px;
+  margin-left: 33px;
+  opacity: 0.5;
+  display: inline-block;
+}
+
+.layer {
+  width: 60px;
+  height: 40px;
+  margin-bottom: 33px;
+  margin-left: 33px;
+  display: inline-block;
+  border: 2px solid #d1d1d1;
+}
+
+#icon-2 {
+  margin-left: 60px;
+}
+
+#icon-3 {
+  margin-left: 25px;
+}
+
+#icon-4 {
+  margin-left: 400px;
+}
+
+#icon-5 {
+  margin-left: 350px;
+}
+
+#icon-6 {
+  margin-left: 12px;
+}
+
+#icon-7 {
+  margin-left: 12px;
+}
+
+#icon-8 {
+  margin-left: 87px;
+}
+
 #myCanvas {
   padding-left: 0;
   padding-right: 0;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 150px;
   display: block;
 }
 
@@ -34,6 +106,7 @@ body {
 
 #palette-icon {
   transform: translateX(51px) translateY(52px);
+  border-radius: 100%;
 }
 
 .swatch {
@@ -175,7 +248,7 @@ body {
   top: 0;
   left: 0;
   background-color: #ededed;
-  margin-top: 180px;
+  margin-top: 240px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border: 1px solid #d1d1d1;
@@ -209,7 +282,7 @@ body {
   top: 0;
   right: 0;
   background-color: #ededed;
-  margin-top: 293px;
+  margin-top: 296px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   border: 1px solid #d1d1d1;
@@ -218,9 +291,9 @@ body {
 .recents {
   width: 48px;
   height: 48px;
-  -moz-border-radius: 100%;
-  -webkit-border-radius: 100%;
-  border-radius: 100%;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
   border: 1px solid #cccccc;
   margin-top: 14px;
   margin-left: 15px;
