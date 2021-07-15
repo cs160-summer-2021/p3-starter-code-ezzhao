@@ -19,7 +19,9 @@
 			var mandala = {
 				item: null,
 				lastClicked: [],
-				lastColor: ["#ffffff"],
+				lastColor: [],
+				lastUndo: [],
+				undoColor: [],
 				filePath: '/static/coloring/images/mandala-freepik.svg'
 			};
 
@@ -287,9 +289,21 @@
 
 			$("#icon-2").click(function(){
 					if (mandala.lastClicked.length > 0) {
+						mandala.lastUndo.push(mandala.lastClicked[mandala.lastClicked.length - 1]);
+						mandala.undoColor.push(mandala.lastClicked[mandala.lastClicked.length - 1].fillColor);
 						mandala.lastClicked[mandala.lastClicked.length - 1].fillColor = mandala.lastColor[mandala.lastColor.length - 1];
 						mandala.lastClicked.pop();
 						mandala.lastColor.pop();
+					}
+			});
+
+			$("#icon-3").click(function(){
+					if (mandala.lastUndo.length > 0) {
+						mandala.lastClicked.push(mandala.lastUndo[mandala.lastUndo.length - 1]);
+						mandala.lastColor.push(mandala.lastUndo[mandala.lastUndo.length - 1].fillColor);
+						mandala.lastUndo[mandala.lastUndo.length - 1].fillColor = mandala.undoColor[mandala.undoColor.length - 1];
+						mandala.lastUndo.pop();
+						mandala.undoColor.pop();
 					}
 			});
 		}
