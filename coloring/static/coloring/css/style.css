@@ -14,7 +14,7 @@ img {
 }
 
 #bottom-bar {
-  width: 100%;
+  width: auto;
   position: fixed;
   bottom: 0;
   left: 0;
