@@ -18,7 +18,8 @@
 			// coloring page
 			var mandala = {
 				item: null,
-				lastClicked: null,
+				lastClicked: [],
+				lastColor: ["#ffffff"],
 				filePath: '/static/coloring/images/mandala-freepik.svg'
 			};
 
@@ -37,6 +38,8 @@
 				    if (hit) {
 				    		// Color pallette keeps track of the full history of colors, though we
 				    		// only color in with the most-recent color.
+								mandala.lastClicked.push(hit.item);
+								mandala.lastColor.push(hit.item.fillColor);
 								if ($("#tool-icon-5").css("background-color") == "rgb(209, 209, 209)") {
 									hit.item.fillColor = "#ffffff";
 								} else {
@@ -112,25 +115,19 @@
 			}
 
 
-			function init(custom){
+			function init(){
 				paper.setup(canvas);
 				getColorsCreatePalette();
 
 				paper.project.importSVG(mandala.filePath, function(item) {
 					mandala.item = item._children["design-freepik"];
-				    paper.project.insertLayer(0,mandala.item);
-
-				    if (custom) {
-				    	myCustomInteraction();
-				    } else {
-				    	myGradientInteraction();
-				    }
-
+				  paper.project.insertLayer(0,mandala.item);
+				  myCustomInteraction();
 				});
 			}
 
 			// Set up the mandala interactivity.
-			init(true);
+			init();
 
 
 			$("#tool-icon-1").click(function() {
@@ -278,6 +275,23 @@
 					cp.history.push($(this).css("background-color"));
 					cp.$container.css("background-color", cp.history[cp.history.length - 1]);
 			});
+
+			$("#icon-1").click(function(){
+					paper.project.activeLayer.removeChildren();
+					paper.project.importSVG(mandala.filePath, function(item) {
+						mandala.item = item._children["design-freepik"];
+					  paper.project.insertLayer(0,mandala.item);
+					  myCustomInteraction();
+					});
+			});
+
+			$("#icon-2").click(function(){
+					if (mandala.lastClicked.length > 0) {
+						mandala.lastClicked[mandala.lastClicked.length - 1].fillColor = mandala.lastColor[mandala.lastColor.length - 1];
+						mandala.lastClicked.pop();
+						mandala.lastColor.pop();
+					}
+			});
 		}
 
 	</script>
@@ -322,32 +336,32 @@
 	</div>
 	<div id="top-bar">
 		<!-- Delete icon source: Google Material Icons - https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Adelete -->
-		<img class="top-icon" id="icon-1" src="/static/coloring/images/delete_black_48dp.svg">
+		<input type="image" class="top-icon" id="icon-1" src="/static/coloring/images/delete_black_48dp.svg"></input>
 
 		<!-- Undo icon source: Google Material Icons - https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Aundo -->
-		<img class="top-icon" id="icon-2" src="/static/coloring/images/undo_black_48dp.svg">
+		<input type="image" class="top-icon" id="icon-2" src="/static/coloring/images/undo_black_48dp.svg"></input>
 
 		<!-- Redo icon source: Google Material Icons - https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Aredo -->
-		<img class="top-icon" id="icon-3" src="/static/coloring/images/redo_black_48dp.svg">
+		<input type="image" class="top-icon" id="icon-3" src="/static/coloring/images/redo_black_48dp.svg"></input>
 
 		<!-- Home icon source: Google Material Icons - https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Ahome -->
-		<img class="top-icon" id="icon-4" src="/static/coloring/images/home_black_48dp.svg">
+		<input type="image" class="top-icon" id="icon-4" src="/static/coloring/images/home_black_48dp.svg"></input>
 
 		<!-- Minus icon source: Google Material Icons - https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Aremove -->
-		<img class="top-icon" id="icon-5" src="/static/coloring/images/remove_black_48dp.svg">
+		<input type="image" class="top-icon" id="icon-5" src="/static/coloring/images/remove_black_48dp.svg"></input>
 
 		<!-- Zoom in icon source: Google Material Icons - https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Azoom_in -->
-		<img class="top-icon" id="icon-6" src="/static/coloring/images/zoom_in_black_48dp.svg">
+		<input type="image" class="top-icon" id="icon-6" src="/static/coloring/images/zoom_in_black_48dp.svg"></input>
 
 		<!-- Plus icon source: Google Material Icons - https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Aadd -->
-		<img class="top-icon" id="icon-7" src="/static/coloring/images/add_black_48dp.svg">
+		<input type="image" class="top-icon" id="icon-7" src="/static/coloring/images/add_black_48dp.svg"></input>
 
 		<!-- Check circle icon source: Google Material Icons - https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Acheck_circle -->
-		<img class="top-icon" id="icon-8" src="/static/coloring/images/check_circle_black_48dp.svg">
+		<input type="image" class="top-icon" id="icon-8" src="/static/coloring/images/check_circle_black_48dp.svg"></input>
 	</div>
 	<div id="bottom-bar">
 		<!-- Layers icon source: Google Material Icons - https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Alayers -->
-		<img class="bottom-icon" id="icon-9" src="/static/coloring/images/layers_black_48dp.svg">
+		<input type="image" class="bottom-icon" id="icon-9" src="/static/coloring/images/layers_black_48dp.svg"></input>
 		<div class="layer"></div>
 		<div class="layer"></div>
 		<div class="layer"></div>

@@ -6,6 +6,10 @@ img {
   border-radius: 15px;
 }
 
+input {
+  border-radius: 15px;
+}
+
 #top-bar {
   width: 100%;
   position: fixed;
